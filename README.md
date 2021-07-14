@@ -1,7 +1,7 @@
 # BikeAlarm
-This project involves running a wire along the length of you bike lock. When the wire is cut an alarm goes off. An IR remote is used to turn the alarm on and off.
+This project involves running a wire along the length of your bike lock. When the wire is cut an alarm goes off. An IR remote is used to turn the alarm on and off.
 
-This project is still in the the development phase so I will document how to build this project on a breadboard and follow up with instructions on soldering everything together on an ElectroCookie half breadboard that can be placed in to a water bottle and fitted on to your bike.
+This project is still in the the development phase so I will first document how to build it on a breadboard and then follow up with instructions on soldering everything together on an ElectroCookie half breadboard that can be placed in to a water bottle and fitted on to your bike.
 
 ## Breadboard setup
 
@@ -18,7 +18,7 @@ This project is still in the the development phase so I will document how to bui
 * (I) Resistors
 * Wires
 * AA battery holder
-*  male and female barrel connector for (dis)connecting device and lock
+* male and female barrel connector for (dis)connecting device and lock
 
 
 #### Initial Setup
@@ -26,19 +26,6 @@ This project is still in the the development phase so I will document how to bui
 *
 
 ## Production setup
-
-
-
-Arduino mini.
-D2 is connected to VCC.
-When VCC goes from HIGH to LOW send HIGH on D4
-D4 is connected to a transistor which, when sent HIGH, connects power to an alarm.
-
-## History
-
-* Basic setup
-I have four breadboards set up.
-The first holds the arduino
 
 ## Where I left off
 The arduino is connected to several breadboards.
@@ -59,23 +46,9 @@ When you disconnect the green wire (D2) it sends a HIGH signal on D4 triggering 
 - [ ] add a wifi mod so it will send an sms or email as part of the alarm
 - [ ] Reduce power consumption by turning off LEDs; including ENABLE_LED_FEEDBACK
 
-## Materials
-
-
-
-# BikeAlarm
-Arduino
-* USB In (for now)
-  - 5v out
-  - Grnd
-  - D2
-  - D4
-
-
-
-
 ## Weaknesses
 * using the Ultra TuF (TM) Door Alarm means that if you put a magnet next to the alarm you can prevent the alarm from sounding
   - the solution to this is to just use a piezo instead of a commercial alarm
 * single digit arm/disarm code is week
-*
+* Alert wire can be cut and then reconnected to silence it.
+  - Consider leaving the alarm on once it is triggered. 
