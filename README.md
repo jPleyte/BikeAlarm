@@ -28,14 +28,18 @@ This project is still in the the development phase so I will first document how 
 ## Production setup
 
 ## Where I left off
-The arduino is connected to several breadboards.
-D2 is connected to vcc and D2
-When you disconnect the green wire (D2) it sends a HIGH signal on D4 triggering the alarm
-  - which is currently a red light
+- 2021.6.14: Evertying is in order. Just need to add some reality
+
 
 ## To Do
-- [ ] Disable alarm when disarmed
+- [ ] Bug: After enabling the alarm, and then restoring the wire: no lights are on. what is the state?
+- [ ] Results are potentially random when input is unplugged (ex unplug d2 but hold it in your hand)
+- [x] Disable alarm when disarmed
     - Instead of connecting input to vcc, raise and lower signal manually
+- [x] bug: once the alarm goes on, it can't be turned off.
+    - To fix this arlarming mneeds to be made in to a function
+- [x] Improve battery performance by not performing on/off functions when nothing has changed.
+    - eg. previousState != currentState
 - [ ] Don't check the IR receiver too often, that will probably drain the battery
 - [ ] Poewr the arduino with a battery rather than USB; but allow for both for debugging
 - [x] Order a 2xAAA battery holder
@@ -51,4 +55,4 @@ When you disconnect the green wire (D2) it sends a HIGH signal on D4 triggering 
   - the solution to this is to just use a piezo instead of a commercial alarm
 * single digit arm/disarm code is week
 * Alert wire can be cut and then reconnected to silence it.
-  - Consider leaving the alarm on once it is triggered. 
+  - Consider leaving the alarm on once it is triggered.
